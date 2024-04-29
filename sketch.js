@@ -10,12 +10,14 @@ function setup() {
   capture. translate (capture_width,0)
   capture. scale(-1,1)
   capture.hide()
+
   //選鈕的介面
-  var radioElement = createRadio("方塊");
+  var radioElement = createRadio();
   radioElement.position(width/2-300,20)
   radioElement.option("方塊")
   radioElement.option("圓圈")
-  radioElement.style("font-size","30")
+  radioElement.style("color","#fff")
+  //radioElement.style("font-size","30")
 }
 
 function draw() {
@@ -23,7 +25,7 @@ function draw() {
   noStroke()
   span = 5+map(mouseX,0,width,0,20)
   push()
-  translate(width/capture_width,height/capture_height) //把原點移到(width/2-160,height/2-120)
+  translate(width/2-capture_width/2,height/2-capture_heigh/2) //把原點移到(width/2-160,height/2-120)
   captureGraphics.image(capture,0,0) //在(0,0)
   for (var x= 0;x<captureGraphics.width;x=x+span){
     for (var y= 0;x<captureGraphics.height;y=y+span){
